@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistakelfy - Humanize AI Text</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mistakelfy</h1>
+            <p class="tagline">Make AI text look human-written (with tasteful imperfections)</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <label for="input-text">Paste your AI-generated text:</label>
+                <textarea id="input-text" placeholder="Paste that suspiciously perfect AI text here..."></textarea>
+            </div>
+
+            <div class="controls">
+                <div class="slider-group">
+                    <label for="chaos-level">Chaos Level: <span id="chaos-value">3</span></label>
+                    <input type="range" id="chaos-level" min="1" max="5" value="3">
+                    <div class="slider-labels">
+                        <span>Subtle</span>
+                        <span>Chaotic</span>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="opt-typos" checked> Typos</label>
+                    <label><input type="checkbox" id="opt-grammar" checked> Grammar slips</label>
+                    <label><input type="checkbox" id="opt-punctuation" checked> Punctuation quirks</label>
+                    <label><input type="checkbox" id="opt-informal" checked> Informal touches</label>
+                    <label><input type="checkbox" id="opt-fillers" checked> Filler words</label>
+                </div>
+
+                <button id="humanize-btn" onclick="humanizeText()">✨ Humanize It</button>
+            </div>
+
+            <div class="output-section">
+                <label for="output-text">Your humanized text:</label>
+                <textarea id="output-text" readonly placeholder="Your beautifully imperfect text will appear here..."></textarea>
+                <button id="copy-btn" onclick="copyOutput()">📋 Copy to Clipboard</button>
+            </div>
+
+            <div class="stats" id="stats"></div>
+        </main>
+
+        <footer>
+            <p>Because perfection is suspicious 🤖→🧑</p>
+        </footer>
+    </div>
+
+    <script src="humanizer.js"></script>
+</body>
+</html>
